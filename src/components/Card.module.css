@@ -1,0 +1,94 @@
+.body {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.carta {
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 280px;
+  border-radius: 20px;
+  padding: 24px 20px;
+  gap: 14px;
+  border: 1px solid rgba(100, 255, 180, 0.2);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.6);
+}
+
+.carta img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #00e676;
+  box-shadow: 0 0 18px rgba(0, 230, 118, 0.35);
+}
+
+.carta h1 {
+  font-size: 17px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 0.5px;
+  color: #00e676;
+  text-align: center;
+  text-shadow: 0 0 12px rgba(0, 230, 118, 0.4);
+}
+
+.carta p {
+  font-size: 13px;
+  color: #8899aa;
+  margin: 0;
+  text-align: center;
+}
+
+.boton {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+textarea {
+  width: 100%;
+  background: rgba(0, 230, 118, 0.04);
+  color: #e0ffe0;
+  border: 1px solid rgb(0, 228, 0);
+  border-radius: 10px;
+  padding: 9px 10px;
+  resize: none;
+  font-size: 13px;
+  outline: none;
+  font-family: inherit;
+}
+
+textarea:focus {
+  border-color: rgb(0, 228, 0);
+  background: rgb(0, 228, 0);
+}
+
+button {
+  width: 100%;
+  padding: 9px;
+  background-color: rgb(0, 228, 0);
+  color: #050505;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+}
+
+.comentario {
+  background: rgba(0, 230, 118, 0.05);
+  border-left: 3px solid rgb(0, 228, 0);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 12px;
+  color: #aaccbb;
+  width: 100%;
+  box-sizing: border-box;
+}
