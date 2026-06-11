@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import styles from './Card.module.css'
 import {CiHeart} from "react-icons/ci";
+import { Link } from 'react-router'
 
 export default function Card({ personaje }) {
 
@@ -21,7 +22,7 @@ export default function Card({ personaje }) {
     }
 
     return (
-        <div className={styles.body}>
+        <Link to={`/personaje/${personaje.id}`} className={styles.body}>
             <div className={styles.carta}>
 
                 <img src={image} alt=''/>
@@ -52,6 +53,6 @@ export default function Card({ personaje }) {
                     }
                 </div>
             </div>
-        </div>
+        </Link>
     )
 }

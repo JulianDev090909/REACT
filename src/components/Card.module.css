@@ -66,7 +66,7 @@ textarea {
 
 textarea:focus {
   border-color: rgb(0, 228, 0);
-  background: rgb(0, 228, 0);
+  background: rgba(0, 228, 0, 0.08);
 }
 
 button {
