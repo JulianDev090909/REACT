@@ -5,7 +5,7 @@ import { Link } from 'react-router'
 
 export default function Card({ personaje }) {
 
-    const { name, image } = personaje
+    const { name, image, status, specie, created, episode, gender, id, location, origin, type } = personaje
 
     const [like, setLike] = useState(false)
     const [comments, setComments] = useState([])  
@@ -26,8 +26,15 @@ export default function Card({ personaje }) {
             <div className={styles.carta}>
 
                 <img src={image} alt=''/>
-
-                <h1>{name}</h1>
+                <h1>Hombre:{name}</h1>
+                <p>Estado:{status}</p>
+                <p>Especie:{specie}</p>
+                <p>Creado: {created}</p>
+                <p>Episodios: {episode}</p>
+                <p>Género: {gender}</p>
+                <p>Ubicación: {location.name}</p>
+                <p>Origen: {origin.name}</p>
+                <p>Tipo: {type}</p>
 
 
                 <div className={styles.boton} onClick={meGustaActor}>

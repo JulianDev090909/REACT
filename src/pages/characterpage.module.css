@@ -1,0 +1,126 @@
+
+.page {
+  background: #0d1117;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  font-family: sans-serif;
+}
+
+.loading {
+  text-align: center;
+  color: #888;
+  padding: 4rem;
+}
+
+.backBtn {
+  background: none;
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #8899aa;
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-size: 13px;
+  cursor: pointer;
+  margin-bottom: 2rem;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #1D9E75;
+  flex-shrink: 0;
+}
+
+.name {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 8px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  padding: 3px 10px;
+  border-radius: 8px;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.alive  { background: rgba(29,158,117,0.15); color: #5DCAA5; }
+.alive .dot  { background: #1D9E75; }
+.dead   { background: rgba(226,75,74,0.15); color: #F09595; }
+.dead .dot   { background: #E24B4A; }
+.unknown { background: rgba(136,135,128,0.15); color: #B4B2A9; }
+.unknown .dot { background: #888780; }
+
+.card {
+  background: #111;
+  border: 1px solid rgba(100,255,180,0.1);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.field {
+  padding: 14px 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.field:nth-child(odd) {
+  border-right: 1px solid rgba(255,255,255,0.06);
+}
+
+.label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #556677;
+}
+
+.value {
+  font-size: 14px;
+  font-weight: 600;
+  color: #cde;
+}
+
+.episodes {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.epLabel {
+  font-size: 13px;
+  color: #7788aa;
+}
+
+.epCount {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1D9E75;
+}
