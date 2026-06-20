@@ -9,10 +9,21 @@ export default function App() {
   const [page, setPage] = useState(1)
   const [totalPages, setTotalPages] = useState(1)
   const [loading, setLoading] = useState(false)
+  const [busqueda, setBusqueda] = useState("")
 
-  const fetchApi = async (currentPage) => {
+  const fetchApi = async (endpoint) => {
     setLoading(true)
-    const response = await fetch(`${BASE_URL}/character?page=${currentPage}`)
+    const params = new URLSearchParams()
+
+    if (page != 1) {
+      params.append("page", page)
+    }
+
+       if (busqueda != '') {
+      params.append("name", busqueda)
+    }
+
+    const response = await fetch(`${BASE_URL}/${endpoint}?${params}`)
     const data = await response.json()
     setCharacters(data.results)
     setTotalPages(data.info.pages)
@@ -20,11 +31,20 @@ export default function App() {
   }
 
   useEffect(() => {
-    fetchApi(page)
-  }, [page])
+    buscarPersonaje()
+  }, [])
 
+ const buscarPersonaje = () => {
+    fetchApi("character").then(data => {
+      setCharacters(data.results || [])
+    })
+  }
   return (
     <div className={styles.wrapper}>
+
+      <input onChange={(e) => setBusqueda(e.target.value)} type="text" placeholder="Buscar personaje..." className={styles.search} />
+
+      <button className={styles.searchBtn} onClick={buscarPersonaje}>Buscar</button>
 
       <h1 className={styles.titulo}>PERSONAJES DE RICK AND MORTY</h1>
 

@@ -7,12 +7,29 @@ export default function CharacterPage() {
   const { id } = useParams()
   const navigate = useNavigate()
   const [character, setCharacter] = useState(null)
+}
+
+
+  const obtenerEpisodios = async () => {
+    const responde = await Promise.all(episode.map(episode => fetch(episode)))
+    const data = await Promise.all(responde.map(res => res.json()))
+    console.log(data)
+    return data
+
+  }
+
+const formatearFecha = (fecha) => {
+  const fechaSliced = fecha.split("T")[0]
+  return fechaSliced.toLocaleDateString("es-CO", { month: "short", year: "numeric", day: "numeric" })
 
   useEffect(() => {
     const getCharacter = async () => {
       const response = await fetch(`${BASE_URL}/character/${id}`)
       const data = await response.json()
       setCharacter(data)
+
+      const episodios = await obtenerEpisodios(data.episode)
+      setCharacter({ ...data, episode:episodios })
     }
     getCharacter()
   }, [id])
@@ -81,11 +98,19 @@ export default function CharacterPage() {
           <span className={styles.epCount}>{episode.length}</span>
         </div>
       </div>
+
+      <h3>Episodios en donde sale</h3>
+      <select>
+
+        {
+
+          episode.map(episodio =>
+            <option>{episodio.name}</option>
+          )
+        }
+
+
+      </select>
     </div>
   )
-
-  const obtenerEpisodios = async () => {
-    const responde = await Promise.all(episode.map(episode => fetch(episode)))
-
-  }
 }
